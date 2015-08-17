@@ -12,5 +12,7 @@ _Roger Orr \<rogero@howzatt.demon.co.uk\>_
 
 # Required changes
 
+# Comparison with uniform call proposals
+
 # References
 
