@@ -10,8 +10,6 @@ _Roger Orr \<rogero@howzatt.demon.co.uk\>_
 
 # Interaction with Concepts
 
-# Using concepts to conditionally define free functions
-
 # Required changes
 
 # Comparison with uniform call proposals
