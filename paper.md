@@ -1,4 +1,4 @@
-# Extension methods for C++
+# Uniform calling syntax lite: extension methods for C++
 
 _Jonathan Coe \<jbcoe@me.com\>_
 
@@ -6,9 +6,13 @@ _Roger Orr \<rogero@howzatt.demon.co.uk\>_
 
 # Motivation
 
-# Proposed syntax
+# Emulating protocols with concepts
 
-# Interaction with Concepts
+# Extension methods
+
+## Proposed syntax
+
+## Interaction with concepts
 
 # Required changes
 
