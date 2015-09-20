@@ -203,7 +203,7 @@ free functions or extension methods into existing valid code will not cause it t
 or change its meaning (ignoring SFINAE-based tricks).
 
 # Open questions and bikeshedding
-Should `this` in extension methods be a referenc or a pointer? It really should
+Should `this` in extension methods be a reference or a pointer? It really should
 not be null, so a reference is appealing. In all current contexts where `this`
 appears in C++, it is a pointer. The decision is to value consistency or
 correctness. The author(s) have selected consistency but this has no deep
