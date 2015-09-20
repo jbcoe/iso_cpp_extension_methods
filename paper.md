@@ -133,9 +133,9 @@ Adding the extension method does not break existing code, but the behaviour may
 be undesirable. Compiler warnings may be desirable if an extension method has
 entered an overload set but is not selected.
 
-Non-public or deleted member functions will prevent the extension method from
-being invoked as they will be selected by overload resolution but rendered
-non-invokeable. 
+Non-public or deleted member functions can prevent an extension method from
+being invoked as they will be preferentially selected during overload
+resolution but rendered non-invokeable. 
 
 ##Access to class members
 Extension methods are like normal free functions apart from their invocation
@@ -197,8 +197,8 @@ Extension methods are required to have `this` as the first argument. Other unive
 function call syntax papers have considered allowing the object to take any argument position
 in a free function when invoked as a member function:
 
-We have made no changes to exisiting overload resolution rules that will mean that existing
-valid code fails to compile or changes its meaning. The addition of concept-constrained
+We have made no changes to exisiting overload resolution rules that could cause existing
+valid code to fail to compile or to change its meaning. The addition of concept-constrained
 free functions or extension methods into existing valid code will not cause it to fail to compile
 or change its meaning (ignoring SFINAE-based tricks).
 
