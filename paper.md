@@ -186,7 +186,7 @@ class methods.]
 # Comparison with existing uniform call proposals
 The extension methods proposed by N1585 do not require `this` to be unique nor
 for it to be the first function parameter. This proposal follows the extension
-method approach used in the C# programming language [C#].
+method approach used in the C`#` programming language [C`#`].
 
 Unlike N4165, N4174 and N4474, the uniform calling syntax this paper enables
 is opt-in and requires explicit addition of boilerplate code. The changes
@@ -209,9 +209,9 @@ correctness. The author(s) have selected consistency but this has no deep
 implications on the proposed changes.
 
 # References
-* [N1585] 'Uniform Calling Syntax (Re-opening public interfaces)', Francis Glassborow, February 05, 2004
-* [N4165] 'Unified Call Syntax', Herb Sutter, 2014-10-04
-* [N4174] 'Call syntax: x.f(y) vs. f(x,y)', Bjarne Stoustrup, 2014-10-11
-* [N4474] 'Unified Call Syntax: x.f(y) and f(x,y)', Bjarne Stoustrup and Herb Sutter
-* [C#] <https://msdn.microsoft.com/en-us/library/bb383977.aspx>
+* [N1585] _'Uniform Calling Syntax (Re-opening public interfaces)'_, Francis Glassborow, N1585.
+* [N4165] _'Unified Call Syntax'_, Herb Sutter, N4165.
+* [N4174] _'Call syntax: x.f(y) vs. f(x,y)'_, Bjarne Stoustrup, N4174.
+* [N4474] _'Unified Call Syntax: x.f(y) and f(x,y)'_, Bjarne Stoustrup and Herb Sutter, N4474.
+* [C`#`] <https://msdn.microsoft.com/en-us/library/bb383977.aspx>
 
