@@ -1,10 +1,11 @@
-# Uniform-calling-syntax lite: extension methods for C++
+# Extension methods for C++
+##(Uniform-function-calling syntax lite)
 
 _Jonathan Coe \<jbcoe@me.com\>_
 
 _Roger Orr \<rogero@howzatt.demon.co.uk\>_
 
-#1. Motivation
+# Motivation
 When writing generic code, we are forced to differentiate between calling
 member functions and free functions: `x.foo()` and `foo(x)` are not the same
 thing. When using concepts to constrain generic code we will run into the
@@ -14,7 +15,7 @@ standard libary introducing free function equivalents for functions like
 `begin`, `end` and `data`.  In all cases the free function invokes the member
 function where it is defined.
 
-There have been proposals [N1585,N4165,N4174,N4474] suggesting changes to
+There have been proposals [N1585, N4165, N4174, N4474] suggesting changes to
 C++'s function resolution rules to allow free function invocation syntax to
 invoke member functions and vice-versa. We are concerned about the impact such
 changes will have on existing code and propose an opt-in alternative by
