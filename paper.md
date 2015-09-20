@@ -184,8 +184,9 @@ that above is already present when derived class methods shadow virtual base
 class methods.]
 
 # Comparison with existing uniform call proposals
-This paper extends up the changes proposed in N1585, N1742 (introduction of
-extension methods).
+The extension methods proposed by N1585 do not require `this` to be unique nor
+for it to be the first function parameter. This proposal follows the extension
+method approach used in the C# programming language [C#].
 
 Unlike N4165, N4174 and N4474, the uniform calling syntax this paper enables
 is opt-in and requires explicit addition of boilerplate code. The changes
@@ -209,7 +210,8 @@ implications on the proposed changes.
 
 # References
 * [N1585] 'Uniform Calling Syntax (Re-opening public interfaces)', Francis Glassborow, February 05, 2004
-* [N1742] 'Auxiliary class interfaces', Francis Glassborow, November 07, 2004
 * [N4165] 'Unified Call Syntax', Herb Sutter, 2014-10-04
 * [N4174] 'Call syntax: x.f(y) vs. f(x,y)', Bjarne Stoustrup, 2014-10-11
 * [N4474] 'Unified Call Syntax: x.f(y) and f(x,y)', Bjarne Stoustrup and Herb Sutter
+* [C#] <https://msdn.microsoft.com/en-us/library/bb383977.aspx>
+
