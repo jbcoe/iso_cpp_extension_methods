@@ -11,7 +11,7 @@ member functions and free functions: `x.foo()` and `foo(x)` are not the same
 thing. When using concepts to constrain generic code we will run into the
 same issue and will have to (arbitrarily) pick member functions or free
 functions to describe the concept. This is undesirable and has led to the
-standard libary introducing free function equivalents for functions like
+standard libary introducing free function equivalents for member functions like
 `begin`, `end` and `data`.  In all cases the free function invokes the member
 function where it is defined.
 
@@ -36,7 +36,7 @@ can have the concept-constrained generic free-function invoked upon it.
     foo(a, 0); // will not compile
 
     template <typename T>
-    concept bool MemberFooable {
+    concept bool MemberFooable() {
       return requires(T& t, int i) {
         {t.foo(i)} -> void;
       };
@@ -63,7 +63,7 @@ extension methods was previously proposed [REF] but not pursued further. We
 believe that the impending introduction of concepts into C++ makes them a
 vastly more appealing proposition.
 
-For the struct `B` we inroduce an extension method `bar` below:
+For the struct `B` we introduce an extension method `bar` below:
 
     struct B;
 
@@ -91,7 +91,7 @@ valid.
     c.foo(0); // will not compile
 
     template <typename T>
-    concept bool FreeFooable {
+    concept bool FreeFooable() {
       return requires(T& t, int i) {
         {foo(t, i)} -> void;
       };
@@ -151,7 +151,7 @@ syntax and have no access to non-public members of a class.
     }
 
 ##Interaction with virtual functions
-Extension methods do not interact with a virtual functions. If a derived class
+Extension methods do not interact with virtual functions. If a derived class
 has a virtual method with the same signature as an extension method that is not
 present in the base class then the extension method will be invoked if accessed
 through a base-class reference.
@@ -205,7 +205,7 @@ functions and extension methods will allow opt-in uniform-calling syntax.
 # Open questions and bikeshedding
 Should `this` in extension methods be a reference or a pointer? It really should
 not be null, so a reference is appealing. In all current contexts where `this`
-appears in C++, it is a pointer. The decision is to value consistency or
+appears in C++, it is a pointer. The decision is whether to value consistency or
 correctness. The author(s) have selected consistency but this has no deep
 implications on the proposed changes.
 
