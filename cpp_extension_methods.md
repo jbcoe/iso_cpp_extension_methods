@@ -11,7 +11,7 @@ member functions and free functions: `x.foo()` and `foo(x)` are not the same
 thing. When using concepts to constrain generic code we will run into the
 same issue and will have to (arbitrarily) pick member functions or free
 functions to describe the concept. This is undesirable and has led to the
-standard libary introducing free function equivalents for member functions like
+standard library introducing free function equivalents for member functions like
 `begin`, `end` and `data`.  In all cases the free function invokes the member
 function where it is defined.
 
