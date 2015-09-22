@@ -22,7 +22,7 @@ changes may have on existing code (although this concern has been addressed in
 some of the more recent proposals) and also about the potential for code maintenance
 problems, were unconstrained uniform function calling to be adopted, when class interfaces
 are changed since any free function that could potentially be called using member function
-syntax might have been so used. 
+syntax might have been so used.
 
 We propose an explicit opt-in alternative by
 introducing extension methods and using concept-constrained free functions.
@@ -222,3 +222,25 @@ implications on the proposed changes.
 * [N4474] _'Unified Call Syntax: x.f(y) and f(x,y)'_, Bjarne Stoustrup and Herb Sutter, N4474.
 * [C`#`] <https://msdn.microsoft.com/en-us/library/bb383977.aspx>
 
+# Appendix
+Setting aside uniform calling syntax, we can employ extension methods very
+usefully to add functionality to existing classes. Adding an extension method
+to `std::string` to see if a substring appears at the beginning or end is as
+easy as:
+
+    using std::string;
+    using std::begin;
+
+    namespace my_extension_methods 
+    {
+    bool begins_with(const std::string* this, const char* substring) {
+      return std::equal(begin(*this), end(*this),
+                          begin(*substring), end(*substring));
+    }
+    }
+    
+    std::string s("Extension methods can be useful in their own right.");
+
+    using my_extension_methods;
+
+    assert(s.begins_with("Extension methods"));
