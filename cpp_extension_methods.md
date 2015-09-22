@@ -235,8 +235,7 @@ easy as:
     namespace my_extension_methods {
       bool begins_with(const std::string* this, 
                        const std::string& substring) {
-        return std::equal(begin(*this), end(*this),
-                          begin(substring), end(substring));
+        return this->compare(0, substring.length(), substring) == 0;
       }
     }
     
