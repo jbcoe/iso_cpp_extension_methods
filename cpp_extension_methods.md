@@ -234,7 +234,7 @@ easy as:
 
     namespace my_extension_methods 
     {
-    bool begins_with(const std::string* this, const char* substring) {
+    bool begins_with(const std::string* this, const std::string& substring) {
       return std::equal(begin(*this), end(*this),
                           begin(substring), end(substring));
     }
