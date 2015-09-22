@@ -232,15 +232,15 @@ easy as:
     using std::string;
     using std::begin;
 
-    namespace my_extension_methods 
-    {
-    bool begins_with(const std::string* this, const std::string& substring) {
-      return std::equal(begin(*this), end(*this),
+    namespace my_extension_methods {
+      bool begins_with(const std::string* this, 
+                       const std::string& substring) {
+        return std::equal(begin(*this), end(*this),
                           begin(substring), end(substring));
-    }
+      }
     }
     
-    std::string s("Extension methods can be useful in their own right.");
+    std::string s("Extension methods are useful in their own right.");
 
     using my_extension_methods;
 
