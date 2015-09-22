@@ -17,8 +17,14 @@ function where it is defined.
 
 There have been proposals [N1585, N4165, N4174, N4474] suggesting changes to
 C++'s function resolution rules to allow free function invocation syntax to
-invoke member functions and vice-versa. We are concerned about the impact such
-changes will have on existing code and propose an opt-in alternative by
+invoke member functions and vice-versa. We are concerned both about the impact such
+changes may have on existing code (although this concern has been addressed in
+some of the more recent proposals) and also about the potential for code maintenance
+problems, were unconstrained uniform function calling to be adopted, when class interfaces
+are changed since any free function that could potentially be called using member function
+syntax might have been so used. 
+
+We propose an explicit opt-in alternative by
 introducing extension methods and using concept-constrained free functions.
 
 # Constraining free-functions with concepts
