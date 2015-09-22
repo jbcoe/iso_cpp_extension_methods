@@ -28,7 +28,7 @@ We propose an explicit opt-in alternative by
 introducing extension methods and using concept-constrained free functions.
 
 # Constraining free-functions with concepts
-Without language changes we can introduce free functions that will be applied
+Without language changes, we can introduce free functions that will be applied
 only to objects which support member function(s) with a given name and
 signature (This may be a weak abuse of the notion of concepts.).  Any
 user-defined type that implements the member functions required by the concept
@@ -80,40 +80,11 @@ For the struct `B` we introduce an extension method `bar` below:
     b.bar(1); // invokes bar(&b, 1)
 
 The first argument of an extension method is named `this`.  When invoked with
-member function syntax, arguments to the member function become second and later
-arguments to the extension method.  Extension methods do not need to be invoked
-as member functions but can be invoked as free functions.
+member function syntax, arguments to the member function become second and
+later arguments to the extension method.  Extension methods do not need to be
+invoked as member functions but can be invoked as free functions.  
 
-We can write generic extension methods and constrain them with concepts.
-Concept-constrained extension methods can be used to enable
-member-function-style invocation only when a given free function invocation is
-valid.
-
-    class C;
-
-    void foo(C& c, int x);
-
-    C c;
-    c.foo(0); // will not compile
-
-    template <typename T>
-    concept bool FreeFooable() {
-      return requires(T& t, int i) {
-        {foo(t, i)} -> void;
-      };
-    }
-
-    // Naming the first parameter 'this' makes 'foo' an extension method
-    void foo(FreeFooable* this, int i) {
-      foo(*this, i);
-    }
-
-    c.foo(0); // calls foo(&c,0)
-
-The concept-constrained code above allows member function invocation to work
-for any type for which an equivalent free function can be found.
-
-The behaviour of extension methods below is designed to minimise the impact on
+The behaviour of extension methods is designed to minimise the impact on
 existing well-formed code (Ignoring SFINAE tricks).
 
 ##Overload resolution
@@ -189,6 +160,36 @@ are defined with the same signature may result in non-obvious behaviour.
 Compiler warnings may be desirable.  [Note that the an issue very similar to
 that above is already present when derived class methods shadow virtual base
 class methods.]
+
+##Combining extension methods with concepts
+We can write generic extension methods and constrain them with concepts.
+Concept-constrained extension methods can be used to enable
+member-function-style invocation only when a given free function invocation is
+valid.
+
+    class C;
+
+    void foo(C& c, int x);
+
+    C c;
+    c.foo(0); // will not compile
+
+    template <typename T>
+    concept bool FreeFooable() {
+      return requires(T& t, int i) {
+        {foo(t, i)} -> void;
+      };
+    }
+
+    // Naming the first parameter 'this' makes 'foo' an extension method
+    void foo(FreeFooable* this, int i) {
+      foo(*this, i);
+    }
+
+    c.foo(0); // calls foo(&c,0)
+
+The concept-constrained code above allows member function invocation to work
+for any type for which an equivalent free function can be found.
 
 # Comparison with existing uniform call proposals
 The extension methods proposed by N1585 do not require `this` to be unique nor
