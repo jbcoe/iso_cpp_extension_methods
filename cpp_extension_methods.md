@@ -241,6 +241,6 @@ easy as:
     
     std::string s("Extension methods are useful in their own right.");
 
-    using my_extension_methods;
+    using namespace my_extension_methods;
 
     assert(s.begins_with("Extension methods"));
