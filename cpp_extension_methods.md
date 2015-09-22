@@ -151,7 +151,7 @@ through a base-class reference.
     g.bar(0); // invokes member G::bar(0)
 
     F& rf = g;
-    rf.foo(0); // invokes extension method foo(&g, i)
+    rf.bar(0); // invokes extension method bar(&g, 0)
 
 The non-invocation of derived class member functions may be non-desirable but
 ensures that adding an extension method cannot change the behaviour of
