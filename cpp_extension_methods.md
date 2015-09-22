@@ -236,7 +236,7 @@ easy as:
     {
     bool begins_with(const std::string* this, const char* substring) {
       return std::equal(begin(*this), end(*this),
-                          begin(*substring), end(*substring));
+                          begin(substring), end(substring));
     }
     }
     
