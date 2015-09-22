@@ -65,7 +65,7 @@ requires language changes: extension methods.
 # Adding extension methods to C++
 Extension methods are free functions that can be invoked with member-function
 syntax. Adding extension methods to c++ requires a language change. Addition of
-extension methods was previously proposed [REF] but not pursued further. We
+extension methods was previously proposed [N1585] but not pursued further. We
 believe that the impending introduction of concepts into C++ makes them a
 vastly more appealing proposition.
 
@@ -217,10 +217,10 @@ correctness. The author(s) have selected consistency but this has no deep
 implications on the proposed changes.
 
 # References
-* [N1585] _'Uniform Calling Syntax (Re-opening public interfaces)'_, Francis Glassborow, N1585.
-* [N4165] _'Unified Call Syntax'_, Herb Sutter, N4165.
-* [N4174] _'Call syntax: x.f(y) vs. f(x,y)'_, Bjarne Stoustrup, N4174.
-* [N4474] _'Unified Call Syntax: x.f(y) and f(x,y)'_, Bjarne Stoustrup and Herb Sutter, N4474.
+* [[N1585](http://wg21.link/n1585)] _'Uniform Calling Syntax (Re-opening public interfaces)'_, Francis Glassborow, N1585.
+* [[N4165](http://wg21.link/n4165)] _'Unified Call Syntax'_, Herb Sutter, N4165.
+* [[N4174](http://wg21.link/n4174)] _'Call syntax: x.f(y) vs. f(x,y)'_, Bjarne Stoustrup, N4174.
+* [[N4474](http://wg21.link/n4474)] _'Unified Call Syntax: x.f(y) and f(x,y)'_, Bjarne Stoustrup and Herb Sutter, N4474.
 * [C`#`] <https://msdn.microsoft.com/en-us/library/bb383977.aspx>
 
 # Appendix
