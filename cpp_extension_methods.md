@@ -1,5 +1,5 @@
 # Extension methods for C++
-## ISO/IEC JTC1 SC22 WG21 - D0079_00
+## ISO/IEC JTC1 SC22 WG21 - P0079_00
 ##(Uniform-function-calling syntax lite)
 
 _Jonathan Coe \<jbcoe@me.com\>_
